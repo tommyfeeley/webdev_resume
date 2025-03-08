@@ -1,0 +1,333 @@
+body {
+    font-family: Andale Mono, monospace;
+    margin: 0;
+}
+#nav-bar {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /*Removes bullet points */
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-items {
+    padding-top: 10px;
+    margin-right: 3rem; /* maybe have to change for when screen size changes */
+    cursor: pointer;
+    
+}
+.nav-items:hover {
+    color:grey
+}
+
+#name-part {
+    padding-top: 0;
+    margin-top: 60px;
+}
+/* Background animation on 1st page going between 3 different gradients for our colors*/
+@keyframes gradient_animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#header-name {
+    color: black;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+#header-job {
+    color: black;
+    font-size: 2rem;
+}
+
+#first-part {
+    text-align: center;
+    background: linear-gradient(20deg, rgb(194, 178, 128), #e6ebea, #09b5e0);
+    background-size: 200% 200%;
+    animation: gradient_animation;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+#summary, #education, #work {
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+}
+
+.nav-item-anchors {
+    color: black;
+    text-decoration: none;
+}
+
+#next-name {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+}
+
+
+
+#summary-text {
+    display: flex;
+    justify-content: center;
+
+}
+
+#summary-pfp {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    
+}
+
+#pfp {
+    border-radius: 50%;
+    max-width: 100%;
+    
+}
+
+#summary-list, #education-list {
+    list-style-type: none;
+    padding: 0px;
+    
+}
+
+.summary-list-item {
+    padding-top: 25px;
+}
+
+#skills {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+#skills-header {
+    text-align: center;
+}
+
+#skills-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.skills-list-item {
+    display: flex;
+    box-sizing: border-box;
+    background-color: rgb(197, 197, 197);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+.education-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+#education-list-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.school-pic {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+#work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    font-size: 1.5rem;
+}
+
+#work-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#work-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+#work-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.work-list-item {
+        display: flex;
+        align-items: center;
+        border: 2px solid #09b5e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 10px;
+        width: 100%;
+        font-size: 1.5rem;
+}
+.work-list-item-title {
+    display: block;
+    text-align: center;
+    width: 25%;
+    padding-right: 20px;
+}
+
+.work-list-item-content {
+    margin-bottom: 10px;
+}
+
+
+
+footer {
+    text-align: center;
+
+}
+
+@media (max-width: 700px) {
+    /*Stacks nav bar on top of each other if site dimensions start to get small */
+    #nav-bar {
+        display: block;
+    }
+    .nav-items {
+        margin-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    #first-part {
+        padding-top: 40px;
+    }
+    #header-name {
+        font-size: 2.5rem;
+    }
+
+    #summary-text {
+        max-height: 50vh;
+        overflow: hidden; /* Hides text if too long when screens little*/
+    }
+   
+    #summary-pfp {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .summary-list-item {
+        padding-top: 10px;
+    }
+    .education-list-item {
+        flex-direction: column;
+        align-items: flex-start; /* Jams stuff towards corner of div its in*/
+    }
+
+    .school-pic {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    #skills {
+        height: auto;
+        min-height: 50vh;
+    }
+
+    #skills-list {
+        max-width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #work {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 75px;
+        font-size: 1.5rem;
+    }
+
+    .work-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .work-list-item-title {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+
+}
+@media (max-height: 600px) {
+    #work, #first-part, #summary, #education {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 75px;
+    }
+
+    .work-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .work-list-item-title {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #name-part {
+        padding-top: 70px;
+    }
+    #summary-text {
+        max-height: 40vh;
+        overflow: hidden;
+    }
+
+    #skills {
+        height: auto;
+        min-height: 50vh;
+    }
+
+    
+}
+
